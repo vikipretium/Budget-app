@@ -26,8 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_231219) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_groups_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,4 +52,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_04_231219) do
   end
 
   add_foreign_key "entities", "users", column: "author_id"
+  add_foreign_key "groups", "users", column: "author_id"
 end

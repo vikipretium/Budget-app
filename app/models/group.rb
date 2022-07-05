@@ -2,6 +2,6 @@ class Group < ApplicationRecord
   validates :name, presence: true, length: { maximum: 250 }
   validates :icon, presence: true
 
-  belongs_to :user
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :entities
 end
