@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -29,8 +27,12 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
 
-    can :manage, Entity, author = user
-    can :manage, Group, author = user 
+    can :manage, Entity do |entity|
+      entity.author == user
+    end
 
+    can :manage, Group do |group|
+      group.author == user.id
+    end
   end
 end
