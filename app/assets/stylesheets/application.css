@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 body {
  font-family: 'Inter', sans-serif;
  padding: 0;
  margin: 0;
  background-color: rgb(229, 226, 226);
 }
-/* .splash--screen {
-  height: 100vh;
-  position: relative;
-} */
+
 .splash--screen h1 {
+  font-family: 'Satisfy', cursive;
   font-weight: 400;
-  font-size: 2em;
+  font-size: 2.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 200px;
 }
+
 .splash--sign {
   position: absolute;
   bottom: 0;
@@ -27,6 +28,7 @@ body {
   align-items: center;
   width: 100%;
 }
+
 .login--btn {
   background-color: #3778c2;
   width: 100%;
@@ -35,6 +37,7 @@ body {
   padding: 15px;
   color: white;
 }
+
 .signup--btn {
   width: 100%;
   text-align: center;
@@ -42,9 +45,11 @@ body {
   padding: 15px;
   color: #3778c2;
 }
+
 .register-sign-up {
   color: white;
 }
+
 .new--cart {
   display: flex;
   justify-content: space-around;
@@ -53,13 +58,20 @@ body {
   margin: -68px 0 100px 0;
   background-color: #3778c2;
 }
+
 .new--cart h3 {
   color: white;
 }
+
 .arrow--back {
   padding-left: 10px;
   color: white;
 }
+
+.btn--div {
+  z-index: 999;
+}
+
 .categories--index {
   position: relative;
 }
@@ -110,8 +122,6 @@ body {
 .entities--total {
   font-weight: 700;
   text-align: center;
-}
-.entities--total {
   background-color: white;
   padding: 5px 0;
 }
@@ -123,7 +133,6 @@ body {
   padding: 10px;
   margin-top: -90px;
 }
-
 .group--card {
   background-color: white;
   display: flex;
@@ -131,17 +140,14 @@ body {
   gap: 10px;
   padding: 10px 10px 0 10px;
 }
-
 .group--details {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .group--link {
   text-align: center;
 }
-
 .group--name,
 .group--amount {
   padding-top: 15px;

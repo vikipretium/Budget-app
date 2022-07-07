@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SplashscreenControllerTest < ActionDispatch::IntegrationTest
+class SplashScreenControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

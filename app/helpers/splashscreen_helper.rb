@@ -1,2 +1,2 @@
-module SplashscreenHelper
+module SplashScreenHelper
 end
