@@ -23,11 +23,9 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to group_url(@group), notice: 'Group was successfully created.' }
-        format.json { render :show, status: :created, location: @group }
+        redirect_to_group_path, notice: 'Category was successfully created.'
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @group.errors, status: :unprocessable_entity }
+        redirect_to_group_path, notice: 'Error Occured, Please try again.'
       end
     end
   end
@@ -64,6 +62,6 @@ class GroupsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def group_params
-    params.fetch(:group, {})
+    params.require(:group.permit(:name, :icon, :user_id))
   end
 end
