@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   # GET /groups or /groups.json
   def index
-    @groups = Group. where(user: current_user)
+    @groups = Group.where(user: current_user)
   end
 
   # GET /groups/1 or /groups/1.json
@@ -22,11 +22,11 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.user = current_user
 
-    respond_to do |format|
+    respond_to do |_format|
       if @group.save
-        redirect_to_group_path, notice: 'Category was successfully created.'
+        redirect_to group_path, notice: 'Category was successfully created.'
       else
-        redirect_to_group_path, notice: 'Error Occured, Please try again.'
+        redirect_to group_path, notice: 'Error Occured, Please try again.'
       end
     end
   end

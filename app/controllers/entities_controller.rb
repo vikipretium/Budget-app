@@ -5,6 +5,7 @@ class EntitiesController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @entities = @group.entities.order(created_at: :desc)
+  end
 
   # GET /entities/new
   def new
@@ -19,13 +20,12 @@ class EntitiesController < ApplicationController
   # POST /entities or /entities.json
   def create
     @entity = Entity.new(entity_params)
-
     @entity.user = current_user
     @group = Group.find(params[:group_id])
     @group.entities << @entity
-   
+
     if @entity.save
-      redirect_to_group_entities_path(@group), notice: 'Your transaction has been added successfully'
+      redirect_to group_entities_path(@group), notice: 'Your transaction has been added successfully'
     else
       render :new, status: :unprocessable_entity
     end
