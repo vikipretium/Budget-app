@@ -74,3 +74,6 @@ end
 gem 'devise'
 
 gem 'cancancan'
+
+gem 'rspec-rails'
+gem 'database_cleaner'
