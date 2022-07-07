@@ -3,14 +3,13 @@ class EntitiesController < ApplicationController
 
   # GET /entities or /entities.json
   def index
-    @entities = Entity.all
-  end
-
-  # GET /entities/1 or /entities/1.json
-  def show; end
+    @group = Group.find(params[:group_id])
+    @entities = @group.entities.order(created_at: :desc)
 
   # GET /entities/new
   def new
+    @group = Group.find(params[:group_id])
+    @group = Group.where(user: current_user)
     @entity = Entity.new
   end
 
@@ -21,27 +20,14 @@ class EntitiesController < ApplicationController
   def create
     @entity = Entity.new(entity_params)
 
-    respond_to do |format|
-      if @entity.save
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully created.' }
-        format.json { render :show, status: :created, location: @entity }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @entity.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /entities/1 or /entities/1.json
-  def update
-    respond_to do |format|
-      if @entity.update(entity_params)
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @entity.errors, status: :unprocessable_entity }
-      end
+    @entity.user = current_user
+    @group = Group.find(params[:group_id])
+    @group.entities << @entity
+   
+    if @entity.save
+      redirect_to_group_entities_path(@group), notice: 'Your transaction has been added successfully'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -65,5 +51,6 @@ class EntitiesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def entity_params
     params.fetch(:entity, {})
+    params.require(:entity).permit(:name, :amount, :user_id)
   end
 end
