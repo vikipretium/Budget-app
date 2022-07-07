@@ -77,3 +77,4 @@ gem 'cancancan'
 
 gem 'rspec-rails'
 gem 'database_cleaner'
+gem 'ffi', '~> 1.15', '>= 1.15.5'
