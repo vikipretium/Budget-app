@@ -2,7 +2,7 @@
 
 # Budget App
 
-> The Ruby on Rails capstone project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. You will create a Ruby on Rails application that allows the user to: register and log in, so that the data is private to them. introduce new transactions associated with a category. see the money spent on each category.
+> The project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. You will create a Ruby on Rails application that allows the user to: register and log in, so that the data is private to them. introduce new transactions associated with a category. see the money spent on each category.
 
 ## Run the project
 
@@ -10,7 +10,15 @@
 
 ## Built With
 
+- Ruby
 - Ruby on Rails
+- Rubocop
+- Bootstrap
+- Gems
+  - Rspec
+  - Capybara
+  - Cancancan
+  - Devise
 
 ## Prerequisites
 
@@ -56,6 +64,10 @@ Give a ⭐️ if you like this project!
 
 - Microverse: [microverse community](https://github.com/microverseinc)
 
+- Original design idea by [Snapscan - iOs design and branding](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+- [Creative Common License of design](https://creativecommons.org/licenses/by-nc/4.0/)
