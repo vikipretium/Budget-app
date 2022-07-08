@@ -1,26 +1,25 @@
 class EntitiesController < ApplicationController
   before_action :set_entity, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
-  # GET /entities or /entities.json
   def index
     @group = Group.find(params[:group_id])
     @entities = @group.entities.order(created_at: :desc)
+
+    redirect_to new_user_session_path, notice: 'You cannot access this resource.' if @group.author != current_user
   end
 
-  # GET /entities/new
   def new
     @group = Group.find(params[:group_id])
-    @group = Group.where(user: current_user)
+    @groups = Group.where(author: current_user)
     @entity = Entity.new
   end
 
-  # GET /entities/1/edit
   def edit; end
 
-  # POST /entities or /entities.json
   def create
     @entity = Entity.new(entity_params)
-    @entity.user = current_user
+    @entity.author = current_user
     @group = Group.find(params[:group_id])
     @group.entities << @entity
 
@@ -31,7 +30,6 @@ class EntitiesController < ApplicationController
     end
   end
 
-  # DELETE /entities/1 or /entities/1.json
   def destroy
     @entity.destroy
 
@@ -49,7 +47,6 @@ class EntitiesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def entity_params
-    params.fetch(:entity, {})
-    params.require(:entity).permit(:name, :amount, :user_id)
+    params.require(:entity).permit(:name, :amount, :author_id)
   end
 end

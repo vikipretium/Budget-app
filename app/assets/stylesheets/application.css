@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 body {
- font-family: 'Inter', sans-serif;
- padding: 0;
- margin: 0;
- background-color: rgb(229, 226, 226);
+  font-family: 'Inter', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(229, 226, 226);
 }
 
 .splash--screen h1 {
@@ -75,6 +75,7 @@ body {
 .categories--index {
   position: relative;
 }
+
 .newgroup--link,
 .newentity--link {
   width: 100%;
@@ -86,18 +87,22 @@ body {
   bottom: 0;
   color: white;
 }
+
 .cartegory--title {
   color: white;
 }
+
 .newgroup--paragraph,
 .newentity--paragraph {
   border: 1px solid white;
   margin: 0 20px;
   padding: 10px 0;
 }
+
 #add-carteg {
   color: white;
 }
+
 #entities {
   display: flex;
   flex-direction: column;
@@ -105,6 +110,7 @@ body {
   padding: 0 10px;
   margin-top: -90px;
 }
+
 .single--entity {
   display: flex;
   flex-direction: row;
@@ -112,13 +118,16 @@ body {
   padding: 15px 30px 0 15px;
   justify-content: space-between;
 }
+
 .entity--name {
   font-weight: 400;
 }
+
 .group--entname {
   color: white;
   margin-bottom: -5px;
 }
+
 .entities--total {
   font-weight: 700;
   text-align: center;
@@ -133,6 +142,7 @@ body {
   padding: 10px;
   margin-top: -90px;
 }
+
 .group--card {
   background-color: white;
   display: flex;
@@ -140,15 +150,24 @@ body {
   gap: 10px;
   padding: 10px 10px 0 10px;
 }
+
 .group--details {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .group--link {
   text-align: center;
+  margin-bottom: 0;
 }
+
 .group--name,
 .group--amount {
   padding-top: 15px;
+}
+
+.formatted--date {
+  margin: 0;
+  padding: 0;
 }

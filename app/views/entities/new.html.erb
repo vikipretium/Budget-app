@@ -19,12 +19,11 @@
 
                 <div class="form-outline mb-4">
                   <%= f.number_field :amount, placeholder: "Amount", class: "form-control form-control-lg" %>
+                  <%# <%= f.collection_select 'id', @groups, :id, :name, {}, {} %> 
+
                 </div>
 
-                <div class="form-outline mb-4">
-                  <p>Select Category</p>
-                  <%= f.select :groups_id, @groups.map { |group| [group.name, group.id] }, {}, { class:'form-select'} %>
-                </div>
+              
 
                 <div class="d-flex justify-content-center">
                   <%= f.submit "Create Transaction", class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
