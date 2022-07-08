@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :surname, presence: true
 
-  has_many :entities
-  has_many :group
+  has_many :entities, foreign_key: 'author_id'
+  has_many :groups, foreign_key: 'author_id'
 end

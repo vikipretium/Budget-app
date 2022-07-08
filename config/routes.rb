@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
    unauthenticated do 
-    root "splash_screen#index"
+    root "splash_screens#index"
    end
 
    authenticated :user do
