@@ -8,6 +8,8 @@
 
 ![splash_screen](./app/assets/images/01_login.png)
 
+- [Live Link](https://rocky-beach-51249.herokuapp.com/)
+
 ## Run the project
 
 `rails s`
