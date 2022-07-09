@@ -1,7 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/gladista-script');
 @import url('http://fonts.cdnfonts.com/css/proxima-nova-2');
 
-
 body {
   font-family: 'Proxima Nova 250', sans-serif;
   padding: 0;
@@ -168,18 +167,15 @@ body {
   padding-top: 15px;
   color: rgb(179, 179, 179);
   font-family: 'Proxima Nova', sans-serif;
-
 }
 
 .group--amount {
   font-weight: 700;
   color: black;
-
 }
 
 .formatted--date {
   margin: 0;
   padding: 0;
   color: rgb(179, 179, 179);
-
 }
