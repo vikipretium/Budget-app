@@ -4,6 +4,10 @@
 
 > The project is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. You will create a Ruby on Rails application that allows the user to: register and log in, so that the data is private to them. introduce new transactions associated with a category. see the money spent on each category.
 
+# Screenshots
+
+![splash_screen](./app/assets/images/01_login.png)
+
 ## Run the project
 
 `rails s`
