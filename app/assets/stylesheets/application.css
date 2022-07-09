@@ -9,7 +9,7 @@ body {
 }
 
 .splash--screen h1 {
-  font-family: 'Gladista Script', 'sans-serif';
+  font-family: 'Gladista Script', sans-serif;
   font-weight: 400;
   font-size: 2.5em;
   display: flex;
